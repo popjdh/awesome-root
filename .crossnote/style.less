@@ -1,0 +1,57 @@
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+.markdown-preview.markdown-preview {
+  @code-block-label-offset: 0.75em;
+  @code-block-label-font-size: 0.75em;
+  @code-block-label-color: rgba(160, 170, 185, 1);
+  @code-block-divider: rgba(128, 128, 128, 0.3);
+  @code-block-content-font-size: 0.875em;
+
+  pre[data-role="codeBlock"] {
+    position: relative;
+    box-sizing: border-box;
+    border-radius: 0px;
+    margin: 1em 0;
+    overflow: auto;
+  }
+
+  pre[data-role="codeBlock"]::before {
+    content: attr(data-info);
+    position: absolute;
+    top: @code-block-label-offset;
+    right: @code-block-label-offset;
+    font-family: var(--vscode-editor-font-family, monospace);
+    font-size: @code-block-label-font-size;
+    font-weight: 400;
+    line-height: 1;
+    color: @code-block-label-color;
+    pointer-events: none;
+    user-select: none;
+    z-index: 1;
+  }
+
+  pre[data-role="codeBlock"] code {
+    font-family: var(--vscode-editor-font-family, monospace);
+    font-size: @code-block-content-font-size;
+  }
+
+  pre[data-role="codeBlock"]:not([data-info])::before,
+  pre[data-role="codeBlock"][data-info=""]::before {
+    content: "text";
+  }
+
+  pre[data-role="codeBlock"]:has(+ pre[data-role="codeBlock"][data-info~="result"]) {
+    margin-bottom: 0;
+    border-bottom: 0;
+  }
+
+  pre[data-role="codeBlock"][data-info~="result"] {
+    margin-top: 0;
+    border-top: 1px solid @code-block-divider;
+  }
+
+  pre[data-role="codeBlock"][data-info~="result"] code {
+    white-space: pre;
+  }
+}

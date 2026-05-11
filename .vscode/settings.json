@@ -1,0 +1,6 @@
+{
+    "markdown-preview-enhanced.previewColorScheme": "selectedPreviewTheme",
+    "markdown-preview-enhanced.previewTheme": "atom-material.css",
+    "markdown-preview-enhanced.printBackground": true,
+    "markdown-preview-enhanced.enableScriptExecution": true
+}
