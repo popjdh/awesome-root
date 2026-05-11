@@ -1,0 +1,3 @@
+[submodule "service-governance/headscale-self-signed"]
+	path = service-governance/headscale-self-signed
+	url = git@github.com:popjdh/awesome-headscale-self-signed.git
